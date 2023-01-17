@@ -1,0 +1,346 @@
+
+/* font-family: policeA, policeB, policeC, DEFAULT(sans-serif, serif); serif = time new roman, sans-serif = arial*/
+
+/* font-family: "Sofia", sans-serif;        */ 
+/* font-family: "Trirong", serif;           */
+/* font-family: "Audiowide", sans-serif;    */
+
+/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Sofia|Trirong|Audiowide">
+
+h1.a {font-family: "Audiowide", sans-serif;}
+h1.b {font-family: "Sofia", sans-serif;}
+h1.c {font-family: "Trirong", serif;}
+
+*/
+
+/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&effect=fire|neon|outline|emboss|shadow-multiple">  
+
+<h1 class="font-effect-neon">Neon Effect</h1>
+<h1 class="font-effect-outline">Outline Effect</h1>
+<h1 class="font-effect-emboss">Emboss Effect</h1>
+<h1 class="font-effect-shadow-multiple">Multiple Shadow Effect</h1>
+
+*/
+
+/*
+	Les balises de type inline : <a></a>     <span><span> 
+
+	Les balises de type block  : <img />     <div></div>      <p></p>      
+
+	--> Poyur jouer avec cette propriete, utiliser le mot-cle   display
+*/
+
+/*
+	Positionnement absolu : 
+	-->  mettre a n<importe quel endroit (mettre au dessus). Lors qu<on definit une POSITION ABSOLUE pour notre 
+	     barre de navigation <nav qui est par defaut un BLOCK>, il passe au dessus de tous les autres elements, peu importe les elements.
+	     Du coup, il n<est pas tout le temps utilise, a part dans ces cas particuliers.
+
+	Positionnement fixe :
+	-->  mettre a un endroit FIXE SUR L<ECRAN EN TOUT LE TEMPS. Pratique pour les session d<entetes ET menus de navigation <nav></nav> qu<on veut garder devant son ECRAN.
+
+	Positionnement relatif :
+	-->  permet de d/caller l,/l/ment par rapport 'a sa position (par rapport 'a son parent).
+*/
+
+body
+{
+	font-family : Trirong, Poppins, Sans-cherif;
+	background-color : rgba(160, 160, 160, 0.7);
+	/*font-size : 20px;*/
+	/*background-image : url("../img/background_image/globules_rouges.jpg");*/
+	/*background-image : url("../img/background_image/bacterie_1.webp");*/
+	/*background-attachment: fixed ; /* ou scroll par default */
+
+	/*background-image : url("https://www.uqac.ca/wp-content/uploads/2022/08/NUM_Rentree2022_WebLaUne3840X2160_1-1.jpg"); 		*/	 
+	/*background-repeat : no-repeat;*/
+	/*background-size : cover;  /* force à image à prendre toute la taille de l'écran*/
+	/*  background-position : center      rester au centre si on reduit notre image */  
+	/*  background-position : right       restera à droite si on reduit notre image */
+	/*  background-position : 10% 80%     10% sur x et 80% sur y */
+	font-size : 12px;
+}
+*   /* selecteur universel */
+{
+	box-sizing : border-box;
+}
+#messageErreur                            /* Le petit message qui apparait en rouge  */
+{
+    color : red;
+    font-weight : bold;
+    font-size : 12px;
+	margin : auto;
+    margin-top : -5px;
+    margin-bottom : 10px;
+    display : inline-block;
+    visibility : hidden;
+}
+#OK                                      /* Le boutton OK  */
+{
+    visibility : hidden;
+}
+p
+{
+	text-align : justify;
+}
+
+h2, h1
+{
+	text-align : center;
+	padding : 5px;
+	width : 75%;
+	margin : auto;
+	margin-bottom : 15px;
+	font-family : Audiowide;
+	border-bottom : 1px black solid; 
+	text-shadow : 4px 4px 4px green;
+}
+h4
+{
+	text-align : left;
+	width : 100%;
+	margin : auto;
+	border-bottom : 2px rgba(200, 200, 200) solid;
+}
+header                           /* balise contenant l'image de PROFIL et les contacts */
+{
+	/*position : fixed;*/
+	padding : 20px 20px 5px 20px;                    /* je decalle l'interieur pour ne pas qu'ils touchent les bordures */
+	width : 800px; 
+	height : 220px;                                  /* Largeur de 800px selon les exigences du TP */
+	margin : auto;                                   /* Je le centre sur x */
+	margin-top : 20px;
+	margin-bottom : 20px;
+	border-radius : 10px;
+	
+	/*background-image : url("../img/background_image/univers_2.jpg");*/
+	background-image : url("../img/background_image/bacterie_1.webp");
+	/*background-image : url("../img/background_image/globules_rouges.jpg");*/
+	background-position : center; /*     rester au centre si on reduit notre image*/
+	background-repeat : no-repeat;
+	background-size : cover;
+	/*background-color : rgba(247, 248, 243);*/
+	border : 2px solid rgba(200, 200, 200);
+}
+.body-content
+{
+	padding : 20px 20px 10px 10px;                    /* je decalle l'interieur pour ne pas qu'ils touchent les bordures */
+	width : 800px;
+	min-height : 220px;
+	margin : auto; 
+	margin-top : 20px;
+	border-radius : 10px;
+	background-color : white;
+	/*background-image : url("../img/background_image/matrix.jpg");*/
+	/* background-position : center; /*     rester au centre si on reduit notre image*/
+	/*background-repeat : no-repeat;*/
+	/*background-size : cover;*/
+	/*background-color : rgba(247, 248, 243);*/
+	color : rgba(150, 150, 150, 1);
+	border : 2px solid rgba(200, 200, 200, 1);
+}
+.limite-video
+{
+	width : 780px;
+	height : 1000px;
+	margin : auto;
+	overflow : auto;
+}
+
+#image_profil                    /* Image du profil Image priose LINKED-in si je m'en souviens bien*/
+{
+	height : 160px;              
+	width : 160px;
+	/* margin : auto;            /* POURQUOI EST CE QUE LE MARGIN : AUTO to seul NE FONCTIONNE PAS ????? */
+	margin : 0 20px 0px 0;       /* Il y a un lien ETROIT entre le MARGIN-BOTTOM et le positionnement de la BARRE DE MENU de navigation tout juste en bas */
+	border-radius : 50%;         /* Astuce permettant d'encercler mon image */
+	display : inline;            /* Pour que le nom et les contacts soient sur la meme ligne */
+	float : left;                /* je veux que l'image flotte vers la gauche*/
+}
+/*Remarque : Je n<ai pas eu besoin de definir l<attribut BORDER*/
+dd
+{
+	text-align : left;
+}
+ul
+{
+	padding : 0;  /*Dans un ul, le padding des li est decalle par deffault. Donc je dois le mettre a 0 pour avoir le controle ABSOLU sur la position. */
+}
+nav ul li
+{
+	list-style-type : none;
+	margin-left : 20px;
+	margin-right : 20px;
+	display : inline;  /* par defaut, les li sont des display BLOCK. On les change donc pour les mettre INLINE */
+	                   /* REMARQUE TRES IMPORTANTE : un composant BLOCK peut avoir une HEIGHT et une WIDTH 
+					                                 mais un composant INLINE n'a NI HEIGHT NI WIDTH 
+													 
+						  SOLUTION : INLINE-BLOCK rassemble le meilleur des 2 mondes : INLINE et BLOCK
+						  DISPLAY : none   (permet de faire DISPATRAITRE un éléments, pour faire un éffet JavaScript)
+													 
+						*/
+}
+li
+{
+	margin-top : 10px;
+	font-size : 16px;
+	/*background-color : green; */
+}
+.contact
+{
+	text-align : center;
+	border : 1px black solid;
+	border-radius : 10px;
+	box-shadow : 4px 4px 4px purple;
+	width : 50%;
+	margin : auto;
+	margin-top : 50px;
+	margin-bottom : 150px;             /* Remarque : contrairement a la Balise P, la balise Section n'a PAS de margin par default. Sio on veut donc decaller une section, il faut definir une marge */
+	padding : 15px;
+	background-color : rgb(211, 190, 211); 
+}
+.conteneur-index-mot-de-pass
+{
+	width : 75%;
+	margin : auto;
+	margin-bottom: 50px;
+	/*background-color : yellow; */
+	padding : 50px;
+	/*padding-top : 50px;
+	padding-bottom : 50px;*/
+	display : flex;
+	justify-content : space-around; /* space-around */
+}
+.element
+{
+	font-size : 12px;
+	padding-top : 20px;
+	border : 1px black solid;
+	border-radius : 10px;
+    box-shadow : 4px 4px 4px rgba(180, 180, 180, 1);
+	width : 200px;
+	background-color: rgba(230, 230, 230, 1);     /* margin-bottom : 150px;      */ /* Remarque : contrairement a la Balise P, la balise Section n'a PAS de margin par default. Sio on veut donc decaller une section, il faut definir une marge */
+}
+.background-cadre-contact
+{
+	width : 50%;
+	margin : auto;
+    background-color : yellow;
+	margin-top : 100px;
+	margin-bottom : 100px;
+}
+.button_password
+{
+	display : inline-block;
+	margin : auto;
+	margin-left : 320px;
+	height : 40px;
+	background-color : yellow;
+}
+.dropdown-menu li
+{
+	position : relative;
+}
+nav ul li > ul
+{
+	display : block;
+	background-color: pink;
+}
+.dropdown-menu .submenu
+{
+	display : none;
+	position : absolute;
+	left : 119px;
+	top : -7px;
+	background-color : yellow;
+}
+.dropdown-menu > li:hover > .submenu
+{
+	display : inline-block;
+	/*background-color : green;*/
+}
+
+
+
+
+
+.cadre-contact
+{
+	font-size : 12px;
+	border : 1px black solid;
+	border-radius : 10px;
+    box-shadow : 4px 4px 4px purple;
+	width : 200px;
+	/*margin : auto;*/
+	/*padding-top : 20px;*/
+	margin : 50px 50px 50px 50px ;   /* Comment je fais pour mieux centrer les cadre-contacts ? */
+	display : inline-block;          /* la reunion du meilleur des 2 mondes */
+	background-color: rgb(211, 190, 211);     /* margin-bottom : 150px;      */ /* Remarque : contrairement a la Balise P, la balise Section n'a PAS de margin par default. Sio on veut donc decaller une section, il faut definir une marge */
+}
+
+.cadre-contact h3, .cadre-contact span /* LES 2 SPAN NE SE CENTRENT PAS */
+{
+	text-align : center;
+}
+
+span, .mes_noms 
+{
+	text-align : center;
+}
+
+.image_4profils
+{
+	height : 160px;
+	width : 160px;
+	/* margin : auto;    /*  POURQUOI EST CE QUE LE MARGIN : AUTO to seul NE FONCTIONNE PAS ? */
+	margin : 20px 0 0 20px;
+	border-radius : 50%;
+}
+
+.image_4profils_cours
+{
+	height : 160px;
+	width : 160px;
+	/* margin : auto;    /*  POURQUOI EST CE QUE LE MARGIN : AUTO to seul NE FONCTIONNE PAS ? */
+	margin : 0 0 30px 20px;
+	border-radius : 50%;
+}
+
+.image_4profils_carre
+{
+	height : 180px;
+	width : 160px;
+	/* margin : auto;    /*  POURQUOI EST CE QUE LE MARGIN : AUTO to seul NE FONCTIONNE PAS ? */
+	margin-left : 20px;
+	margin-right : 30px;
+	margin-bottom : 10px;
+	border-radius : 10px 10px 0 0;
+}
+
+a:hover
+{
+	color : green;
+	/*font-weight : bold;*/
+}
+footer
+{
+	margin-top : 20px;
+	margin-left : 10px;                /* remarque qu'ici, ce n'est PAS un MARGIN-LEFT mais plutot un LEFT */
+	margin-right : 10px;
+	margin-bottom : 10px;
+	font-family : Trirong;
+	font-size : 12px;
+	background : black;
+	text-align : center;
+	color : rgba(255, 255, 255, 0.5);
+}
+.footer-container
+{
+	display : flex;
+	/*justify-content : space-around; /* space-around */
+}
+
+.footer-container > div
+{
+	margin : 20px;
+}

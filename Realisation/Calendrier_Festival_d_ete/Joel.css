@@ -1,0 +1,37 @@
+
+body
+{
+	font-family : arial, verdana, sans-serif;
+}
+
+table
+{
+	border-collapse: collapse;
+}
+
+td
+{
+	border: 1px solid grey;
+	width : 100px;
+	height : 20px;
+}
+
+.day
+{
+	border-top: 2px solid grey;
+	text-align : center;
+}
+
+.titre
+{
+	height : 30px;
+	width : 718px;
+	text-align : left;
+}
+
+.mois_en_cours
+{
+	height : 30px;
+	width : 718px;
+	text-align : center;
+}
