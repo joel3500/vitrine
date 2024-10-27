@@ -122,8 +122,11 @@ sub Creer_Fichiers_Corriges(@_){
 	    substr($_, $pos, 1,"_corrige.");	 
 
 	    $_fichier_corrige = $_;	 
+		
 	    print "\n $_fichier_corrige    has just been created \n";
+		
 	    Reporter_Donnees_Dans_Fichier_Corrige(@devoir_Corrige, $_fichier_corrige);
+		
 		push(@Fiche_notes, $devoir_Corrige[0]);
     }   
 	    print "\n\nNames and Marks of the students : \n";
@@ -170,7 +173,7 @@ sub Corriger_1_Dev($_){
 	
 	my @note;
 	
-	open FL, "$_" || die "Problï¿½me d'ouverture : $! \n";
+	open FL, "$_" || die "Problème d'ouverture : $! \n";
 	@data = <FL>;
 	close(FL);
 	
