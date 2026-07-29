@@ -106,8 +106,11 @@ header                           /* balise contenant l'image de PROFIL et les co
 {
 	/*position : fixed;*/
 	padding : 20px 20px 5px 20px;                    /* je decalle l'interieur pour ne pas qu'ils touchent les bordures */
-	width : 800px; 
-	height : 220px;                                  /* Largeur de 800px selon les exigences du TP */
+	width : 100%;
+	max-width : 800px;                               /* Largeur de 800px selon les exigences du TP, mais fluide en dessous */
+	box-sizing : border-box;
+	min-height : 220px;
+	height : auto;
 	margin : auto;                                   /* Je le centre sur x */
 	margin-top : 20px;
 	margin-bottom : 20px;
@@ -125,9 +128,11 @@ header                           /* balise contenant l'image de PROFIL et les co
 .body-content
 {
 	padding : 20px 20px 10px 10px;                    /* je decalle l'interieur pour ne pas qu'ils touchent les bordures */
-	width : 800px;
+	width : 100%;
+	max-width : 800px;
+	box-sizing : border-box;
 	min-height : 220px;
-	margin : auto; 
+	margin : auto;
 	margin-top : 20px;
 	border-radius : 10px;
 	background-color : white;
@@ -141,10 +146,25 @@ header                           /* balise contenant l'image de PROFIL et les co
 }
 .limite-video
 {
-	width : 780px;
-	height : 1000px;
+	width : 100%;
+	max-width : 780px;
+	height : auto;
 	margin : auto;
-	overflow : auto;
+	overflow : visible;
+}
+.cadre_video                     /* une video et son titre, empilee proprement en responsive */
+{
+	margin-bottom : 30px;
+}
+.cadre_video iframe
+{
+	width : 100%;
+	max-width : 755px;
+	aspect-ratio : 755 / 470;     /* remplace les attributs width/height fixes de l'iframe pour rester proportionnel */
+	height : auto;
+	display : block;
+	margin : 0 auto;
+	border : 0;
 }
 
 #image_profil                    /* Image du profil Image priose LINKED-in si je m'en souviens bien*/
@@ -201,14 +221,16 @@ li
 }
 .conteneur-index-mot-de-pass
 {
-	width : 75%;
+	width : 90%;
+	max-width : 900px;
 	margin : auto;
 	margin-bottom: 50px;
 	/*background-color : yellow; */
-	padding : 50px;
+	padding : 50px 20px;
 	/*padding-top : 50px;
 	padding-bottom : 50px;*/
 	display : flex;
+	flex-wrap : wrap;
 	justify-content : space-around; /* space-around */
 }
 .element
@@ -219,6 +241,8 @@ li
 	border-radius : 10px;
     box-shadow : 4px 4px 4px rgba(180, 180, 180, 1);
 	width : 200px;
+	max-width : 100%;
+	margin-bottom : 20px;
 	background-color: rgba(230, 230, 230, 1);     /* margin-bottom : 150px;      */ /* Remarque : contrairement a la Balise P, la balise Section n'a PAS de margin par default. Sio on veut donc decaller une section, il faut definir une marge */
 }
 .background-cadre-contact
@@ -232,8 +256,7 @@ li
 .button_password
 {
 	display : inline-block;
-	margin : auto;
-	margin-left : 320px;
+	margin : 10px auto;
 	height : 40px;
 	background-color : yellow;
 }
@@ -337,10 +360,97 @@ footer
 .footer-container
 {
 	display : flex;
+	flex-wrap : wrap;
+	justify-content : center;
 	/*justify-content : space-around; /* space-around */
 }
 
 .footer-container > div
 {
 	margin : 20px;
+}
+
+/* ===================================================================
+   Rendu responsive : le site etait entierement fige en pixels (header
+   800px, body-content 800px, videos 755px, etc.) et n'avait pas de
+   balise viewport. Les regles ci-dessous adaptent la mise en page aux
+   ecrans de tablette et de mobile sans toucher au rendu desktop.
+   =================================================================== */
+@media (max-width : 860px)
+{
+	header, .body-content, .limite-video
+	{
+		width : 95%;
+	}
+}
+
+@media (max-width : 700px)
+{
+	header
+	{
+		display : flex;
+		flex-direction : column;
+		align-items : center;
+		text-align : center;
+		height : auto;
+		padding-bottom : 20px;
+	}
+	#image_profil
+	{
+		float : none;
+		margin : 0 0 15px 0;
+	}
+	nav ul.navbar-nav
+	{
+		display : flex;
+		flex-direction : column;
+		align-items : center;
+		width : 100%;
+	}
+	nav ul li
+	{
+		display : block;
+		margin : 6px 0;
+		text-align : center;
+	}
+	.dropdown-menu
+	{
+		position : static;
+		text-align : center;
+	}
+	.dropdown-menu .submenu
+	{
+		position : static;
+		left : auto;
+		top : auto;
+	}
+	.conteneur-index-mot-de-pass
+	{
+		flex-direction : column;
+		align-items : center;
+		padding : 30px 15px;
+	}
+	.element
+	{
+		width : 100%;
+		max-width : 320px;
+	}
+}
+
+@media (max-width : 480px)
+{
+	body
+	{
+		font-size : 14px;
+	}
+	h1, h2
+	{
+		width : 95%;
+		font-size : 1.3em;
+	}
+	.image_4profils_carre
+	{
+		float : none;
+		margin : 10px auto;
+	}
 }
