@@ -1,7 +1,7 @@
 
 /* font-family: policeA, policeB, policeC, DEFAULT(sans-serif, serif); serif = time new roman, sans-serif = arial*/
 
-/* font-family: "Sofia", sans-serif;        */ 
+/* font-family: "Sofia", sans-serif;        */
 /* font-family: "Trirong", serif;           */
 /* font-family: "Audiowide", sans-serif;    */
 
@@ -13,7 +13,7 @@ h1.c {font-family: "Trirong", serif;}
 
 */
 
-/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&effect=fire|neon|outline|emboss|shadow-multiple">  
+/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&effect=fire|neon|outline|emboss|shadow-multiple">
 
 <h1 class="font-effect-neon">Neon Effect</h1>
 <h1 class="font-effect-outline">Outline Effect</h1>
@@ -23,16 +23,16 @@ h1.c {font-family: "Trirong", serif;}
 */
 
 /*
-	Les balises de type inline : <a></a>     <span><span> 
+	Les balises de type inline : <a></a>     <span><span>
 
-	Les balises de type block  : <img />     <div></div>      <p></p>      
+	Les balises de type block  : <img />     <div></div>      <p></p>
 
 	--> Poyur jouer avec cette propriete, utiliser le mot-cle   display
 */
 
 /*
-	Positionnement absolu : 
-	-->  mettre a n<importe quel endroit (mettre au dessus). Lors qu<on definit une POSITION ABSOLUE pour notre 
+	Positionnement absolu :
+	-->  mettre a n<importe quel endroit (mettre au dessus). Lors qu<on definit une POSITION ABSOLUE pour notre
 	     barre de navigation <nav qui est par defaut un BLOCK>, il passe au dessus de tous les autres elements, peu importe les elements.
 	     Du coup, il n<est pas tout le temps utilise, a part dans ces cas particuliers.
 
@@ -43,22 +43,42 @@ h1.c {font-family: "Trirong", serif;}
 	-->  permet de d/caller l,/l/ment par rapport 'a sa position (par rapport 'a son parent).
 */
 
+/* ===================================================================
+   Palette et typographie inspirees d'un style "reseau social" sobre
+   (fond gris tres clair, cartes blanches, accent bleu) pour un rendu
+   plus professionnel que l'ancien theme (polices decoratives, ombres
+   colorees, fonds jaune/rose/violet).
+   =================================================================== */
+:root
+{
+	--bleu-accent : #1877f2;
+	--bleu-accent-fonce : #166fe5;
+	--fond-page : #f0f2f5;
+	--fond-carte : #ffffff;
+	--texte-principal : #1c1e21;
+	--texte-secondaire : #65676b;
+	--bordure : #dadde1;
+	--ombre-carte : 0 1px 2px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+html
+{
+	overflow-x : hidden;
+}
 body
 {
 	font-family : Trirong, Poppins, Sans-cherif;
-	background-color : rgba(160, 160, 160, 0.7);
-	/*font-size : 20px;*/
-	/*background-image : url("../img/background_image/globules_rouges.jpg");*/
-	/*background-image : url("../img/background_image/bacterie_1.webp");*/
-	/*background-attachment: fixed ; /* ou scroll par default */
-
-	/*background-image : url("https://www.uqac.ca/wp-content/uploads/2022/08/NUM_Rentree2022_WebLaUne3840X2160_1-1.jpg"); 		*/	 
-	/*background-repeat : no-repeat;*/
-	/*background-size : cover;  /* force à image à prendre toute la taille de l'écran*/
-	/*  background-position : center      rester au centre si on reduit notre image */  
-	/*  background-position : right       restera à droite si on reduit notre image */
-	/*  background-position : 10% 80%     10% sur x et 80% sur y */
-	font-size : 12px;
+	background-color : var(--fond-page);
+	color : var(--texte-principal);
+	font-size : 15px;
+	line-height : 1.5;
+	max-width : 100%;
+	overflow-x : hidden;
+}
+h1, h2, h4, p
+{
+	overflow-wrap : break-word;
+	word-wrap : break-word;
 }
 *   /* selecteur universel */
 {
@@ -66,9 +86,9 @@ body
 }
 #messageErreur                            /* Le petit message qui apparait en rouge  */
 {
-    color : red;
+    color : #d93025;
     font-weight : bold;
-    font-size : 12px;
+    font-size : 13px;
 	margin : auto;
     margin-top : -5px;
     margin-bottom : 10px;
@@ -87,20 +107,23 @@ p
 h2, h1
 {
 	text-align : center;
-	padding : 5px;
-	width : 75%;
-	margin : auto;
-	margin-bottom : 15px;
+	padding : 15px 5px;
+	width : 100%;
+	max-width : 800px;
+	margin : 20px auto 25px auto;
 	font-family : Audiowide;
-	border-bottom : 1px black solid; 
-	text-shadow : 4px 4px 4px green;
+	font-weight : 700;
+	color : var(--texte-principal);
+	border-bottom : 3px solid var(--bleu-accent);
 }
 h4
 {
 	text-align : left;
 	width : 100%;
 	margin : auto;
-	border-bottom : 2px rgba(200, 200, 200) solid;
+	padding-bottom : 8px;
+	color : var(--texte-principal);
+	border-bottom : 1px solid var(--bordure);
 }
 header                           /* balise contenant l'image de PROFIL et les contacts */
 {
@@ -114,35 +137,25 @@ header                           /* balise contenant l'image de PROFIL et les co
 	margin : auto;                                   /* Je le centre sur x */
 	margin-top : 20px;
 	margin-bottom : 20px;
-	border-radius : 10px;
-	
-	/*background-image : url("../img/background_image/univers_2.jpg");*/
-	background-image : url("../img/background_image/bacterie_1.webp");
-	/*background-image : url("../img/background_image/globules_rouges.jpg");*/
-	background-position : center; /*     rester au centre si on reduit notre image*/
-	background-repeat : no-repeat;
-	background-size : cover;
-	/*background-color : rgba(247, 248, 243);*/
-	border : 2px solid rgba(200, 200, 200);
+	border-radius : 8px;
+	background-color : var(--fond-carte);
+	border : 1px solid var(--bordure);
+	box-shadow : var(--ombre-carte);
 }
 .body-content
 {
-	padding : 20px 20px 10px 10px;                    /* je decalle l'interieur pour ne pas qu'ils touchent les bordures */
+	padding : 20px 24px;                    /* je decalle l'interieur pour ne pas qu'ils touchent les bordures */
 	width : 100%;
 	max-width : 800px;
 	box-sizing : border-box;
 	min-height : 220px;
 	margin : auto;
 	margin-top : 20px;
-	border-radius : 10px;
-	background-color : white;
-	/*background-image : url("../img/background_image/matrix.jpg");*/
-	/* background-position : center; /*     rester au centre si on reduit notre image*/
-	/*background-repeat : no-repeat;*/
-	/*background-size : cover;*/
-	/*background-color : rgba(247, 248, 243);*/
-	color : rgba(150, 150, 150, 1);
-	border : 2px solid rgba(200, 200, 200, 1);
+	border-radius : 8px;
+	background-color : var(--fond-carte);
+	color : var(--texte-principal);
+	border : 1px solid var(--bordure);
+	box-shadow : var(--ombre-carte);
 }
 .limite-video
 {
@@ -164,27 +177,42 @@ header                           /* balise contenant l'image de PROFIL et les co
 	height : auto;
 	display : block;
 	margin : 0 auto;
-	border : 0;
+	border : 1px solid var(--bordure);
+	border-radius : 6px;
 }
 
 #image_profil                    /* Image du profil Image priose LINKED-in si je m'en souviens bien*/
 {
-	height : 160px;              
+	height : 160px;
 	width : 160px;
 	/* margin : auto;            /* POURQUOI EST CE QUE LE MARGIN : AUTO to seul NE FONCTIONNE PAS ????? */
 	margin : 0 20px 0px 0;       /* Il y a un lien ETROIT entre le MARGIN-BOTTOM et le positionnement de la BARRE DE MENU de navigation tout juste en bas */
 	border-radius : 50%;         /* Astuce permettant d'encercler mon image */
 	display : inline;            /* Pour que le nom et les contacts soient sur la meme ligne */
 	float : left;                /* je veux que l'image flotte vers la gauche*/
+	object-fit : cover;
+	border : 3px solid var(--fond-carte);
+	outline : 1px solid var(--bordure);
+	box-shadow : 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 /*Remarque : Je n<ai pas eu besoin de definir l<attribut BORDER*/
 dd
 {
 	text-align : left;
+	color : var(--texte-secondaire);
+}
+dt
+{
+	color : var(--texte-principal);
 }
 ul
 {
 	padding : 0;  /*Dans un ul, le padding des li est decalle par deffault. Donc je dois le mettre a 0 pour avoir le controle ABSOLU sur la position. */
+}
+nav
+{
+	border-top : 1px solid var(--bordure);
+	padding-top : 8px;
 }
 nav ul li
 {
@@ -192,73 +220,96 @@ nav ul li
 	margin-left : 20px;
 	margin-right : 20px;
 	display : inline;  /* par defaut, les li sont des display BLOCK. On les change donc pour les mettre INLINE */
-	                   /* REMARQUE TRES IMPORTANTE : un composant BLOCK peut avoir une HEIGHT et une WIDTH 
-					                                 mais un composant INLINE n'a NI HEIGHT NI WIDTH 
-													 
+	                   /* REMARQUE TRES IMPORTANTE : un composant BLOCK peut avoir une HEIGHT et une WIDTH
+					                                 mais un composant INLINE n'a NI HEIGHT NI WIDTH
+
 						  SOLUTION : INLINE-BLOCK rassemble le meilleur des 2 mondes : INLINE et BLOCK
 						  DISPLAY : none   (permet de faire DISPATRAITRE un éléments, pour faire un éffet JavaScript)
-													 
+
 						*/
+}
+nav ul li > a
+{
+	color : var(--texte-principal);
+	font-weight : 600;
+	text-decoration : none;
 }
 li
 {
 	margin-top : 10px;
-	font-size : 16px;
-	/*background-color : green; */
+	font-size : 15px;
 }
 .contact
 {
 	text-align : center;
-	border : 1px black solid;
-	border-radius : 10px;
-	box-shadow : 4px 4px 4px purple;
+	border : 1px solid var(--bordure);
+	border-radius : 8px;
+	box-shadow : var(--ombre-carte);
 	width : 50%;
 	margin : auto;
 	margin-top : 50px;
 	margin-bottom : 150px;             /* Remarque : contrairement a la Balise P, la balise Section n'a PAS de margin par default. Sio on veut donc decaller une section, il faut definir une marge */
 	padding : 15px;
-	background-color : rgb(211, 190, 211); 
+	background-color : var(--fond-carte);
 }
 .conteneur-index-mot-de-pass
 {
-	width : 90%;
-	max-width : 900px;
+	width : 100%;
+	max-width : 800px;                               /* meme largeur que header/.body-content */
+	box-sizing : border-box;
 	margin : auto;
 	margin-bottom: 50px;
-	/*background-color : yellow; */
 	padding : 50px 20px;
-	/*padding-top : 50px;
-	padding-bottom : 50px;*/
 	display : flex;
 	flex-wrap : wrap;
 	justify-content : space-around; /* space-around */
 }
 .element
 {
-	font-size : 12px;
-	padding-top : 20px;
-	border : 1px black solid;
-	border-radius : 10px;
-    box-shadow : 4px 4px 4px rgba(180, 180, 180, 1);
+	font-size : 14px;
+	padding : 20px;
+	border : 1px solid var(--bordure);
+	border-radius : 8px;
+    box-shadow : var(--ombre-carte);
 	width : 200px;
 	max-width : 100%;
 	margin-bottom : 20px;
-	background-color: rgba(230, 230, 230, 1);     /* margin-bottom : 150px;      */ /* Remarque : contrairement a la Balise P, la balise Section n'a PAS de margin par default. Sio on veut donc decaller une section, il faut definir une marge */
+	background-color : var(--fond-carte);
 }
 .background-cadre-contact
 {
 	width : 50%;
 	margin : auto;
-    background-color : yellow;
+    background-color : var(--fond-carte);
 	margin-top : 100px;
 	margin-bottom : 100px;
+	border-radius : 8px;
+	box-shadow : var(--ombre-carte);
 }
-.button_password
+.button_password, #Soumettre
 {
 	display : inline-block;
 	margin : 10px auto;
 	height : 40px;
-	background-color : yellow;
+	padding : 0 20px;
+	background-color : var(--bleu-accent);
+	color : #ffffff;
+	font-weight : 600;
+	border : none;
+	border-radius : 6px;
+	cursor : pointer;
+	transition : background-color 0.15s ease-in-out;
+}
+.button_password:hover, #Soumettre:hover
+{
+	background-color : var(--bleu-accent-fonce);
+}
+#messageWeb
+{
+	padding : 8px 12px;
+	border : 1px solid var(--bordure);
+	border-radius : 6px;
+	font-size : 15px;
 }
 .dropdown-menu li
 {
@@ -267,7 +318,11 @@ li
 nav ul li > ul
 {
 	display : block;
-	background-color: pink;
+	background-color : var(--fond-carte);
+	border : 1px solid var(--bordure);
+	border-radius : 8px;
+	box-shadow : var(--ombre-carte);
+	padding : 8px 0;
 }
 .dropdown-menu .submenu
 {
@@ -275,30 +330,35 @@ nav ul li > ul
 	position : absolute;
 	left : 119px;
 	top : -7px;
-	background-color : yellow;
+	background-color : var(--fond-carte);
+	border : 1px solid var(--bordure);
+	border-radius : 8px;
+	box-shadow : var(--ombre-carte);
 }
 .dropdown-menu > li:hover > .submenu
 {
 	display : inline-block;
-	/*background-color : green;*/
 }
-
-
-
-
+.dropdown-item
+{
+	color : var(--texte-principal);
+}
+.dropdown-item:hover
+{
+	color : var(--bleu-accent);
+}
 
 .cadre-contact
 {
-	font-size : 12px;
-	border : 1px black solid;
-	border-radius : 10px;
-    box-shadow : 4px 4px 4px purple;
+	font-size : 14px;
+	border : 1px solid var(--bordure);
+	border-radius : 8px;
+    box-shadow : var(--ombre-carte);
 	width : 200px;
-	/*margin : auto;*/
-	/*padding-top : 20px;*/
 	margin : 50px 50px 50px 50px ;   /* Comment je fais pour mieux centrer les cadre-contacts ? */
+	padding : 15px;
 	display : inline-block;          /* la reunion du meilleur des 2 mondes */
-	background-color: rgb(211, 190, 211);     /* margin-bottom : 150px;      */ /* Remarque : contrairement a la Balise P, la balise Section n'a PAS de margin par default. Sio on veut donc decaller une section, il faut definir une marge */
+	background-color : var(--fond-carte);
 }
 
 .cadre-contact h3, .cadre-contact span /* LES 2 SPAN NE SE CENTRENT PAS */
@@ -306,7 +366,7 @@ nav ul li > ul
 	text-align : center;
 }
 
-span, .mes_noms 
+span, .mes_noms
 {
 	text-align : center;
 }
@@ -315,54 +375,64 @@ span, .mes_noms
 {
 	height : 160px;
 	width : 160px;
-	/* margin : auto;    /*  POURQUOI EST CE QUE LE MARGIN : AUTO to seul NE FONCTIONNE PAS ? */
 	margin : 20px 0 0 20px;
 	border-radius : 50%;
+	object-fit : cover;
 }
 
 .image_4profils_cours
 {
 	height : 160px;
 	width : 160px;
-	/* margin : auto;    /*  POURQUOI EST CE QUE LE MARGIN : AUTO to seul NE FONCTIONNE PAS ? */
 	margin : 0 0 30px 20px;
 	border-radius : 50%;
+	object-fit : cover;
 }
 
 .image_4profils_carre
 {
-	height : 180px;
-	width : 160px;
-	/* margin : auto;    /*  POURQUOI EST CE QUE LE MARGIN : AUTO to seul NE FONCTIONNE PAS ? */
-	margin-left : 20px;
-	margin-right : 30px;
-	margin-bottom : 10px;
-	border-radius : 10px 10px 0 0;
+	width : 100%;
+	max-width : 220px;
+	height : auto;
+	aspect-ratio : 160 / 180;         /* garde les proportions d'origine tout en devenant fluide */
+	object-fit : cover;
+	display : block;
+	margin : 0 auto 10px auto;
+	border-radius : 8px 8px 0 0;
 }
 
+a
+{
+	color : var(--bleu-accent);
+}
 a:hover
 {
-	color : green;
-	/*font-weight : bold;*/
+	color : var(--bleu-accent-fonce);
+	text-decoration : underline;
 }
 footer
 {
-	margin-top : 20px;
+	margin-top : 40px;
 	margin-left : 10px;                /* remarque qu'ici, ce n'est PAS un MARGIN-LEFT mais plutot un LEFT */
 	margin-right : 10px;
 	margin-bottom : 10px;
+	padding : 20px 10px;
 	font-family : Trirong;
-	font-size : 12px;
-	background : black;
+	font-size : 13px;
+	background : var(--texte-principal);
+	border-radius : 8px;
 	text-align : center;
-	color : rgba(255, 255, 255, 0.5);
+	color : rgba(255, 255, 255, 0.65);
+}
+footer a
+{
+	color : #ffffff;
 }
 .footer-container
 {
 	display : flex;
 	flex-wrap : wrap;
 	justify-content : center;
-	/*justify-content : space-around; /* space-around */
 }
 
 .footer-container > div
@@ -427,13 +497,18 @@ footer
 	.conteneur-index-mot-de-pass
 	{
 		flex-direction : column;
-		align-items : center;
+		align-items : stretch;
 		padding : 30px 15px;
 	}
 	.element
 	{
 		width : 100%;
-		max-width : 320px;
+		max-width : none;
+		box-sizing : border-box;
+	}
+	.image_4profils_carre
+	{
+		max-width : 260px;                /* un peu plus grande une fois la carte en pleine largeur */
 	}
 }
 
